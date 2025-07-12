@@ -1,7 +1,9 @@
-<<<<<<< HEAD
-Mangaroliya, Shubham, 22306211
+
 
 Jagani, Sarthik, 22306164
+
+
+Mangaroliya, Shubham, 2230621
 
 # Hyundai Car Price Prediction System
 
