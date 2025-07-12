@@ -1,0 +1,73 @@
+version: "3.1"
+
+intents:
+  - car_models
+  - model_information
+  - price_inquiry
+  - fuel_efficiency
+  - model_comparisons
+  - greet
+  - goodbye
+  - thank
+
+entities:
+  - model
+
+slots:
+  model:
+    type: text
+    mappings:
+      - type: from_text
+
+responses:
+  utter_car_models:
+    - text: "Available models include I20, Tucson, I10, and IX35."
+
+  utter_model_information:
+    - text: "The I20 is a 2017 model with a 1.2L petrol engine, manual transmission, 58.9 mpg, and priced at £7,999."
+      condition:
+        - type: slot
+          name: model
+          value: "i20"
+    - text: "Tucson models include 2016 variants with 1.7L/2.0L engines, diesel fuel, mpg ranging from 43.5 to 61.7, and prices between £11,399–£14,499."
+      condition:
+        - type: slot
+          name: model
+          value: "tucson"
+    - text: "I'm sorry, I don't have information on that model."
+  
+  utter_price_inquiry:
+    - text: "The I20 is priced at £7,999."
+      condition:
+        - type: slot
+          name: model
+          value: "i20"
+    - text: "Tucson prices range from £11,399 to £14,499."
+      condition:
+        - type: slot
+          name: model
+          value: "tucson"
+    - text: "Prices range from £6,499 (Tucson) to £14,499 (Tucson)."
+
+  utter_fuel_efficiency:
+    - text: "MPG ranges from 43.5 (Tucson Diesel Automatic) to 61.7 (Tucson Diesel Manual)."
+    - text: "The Tucson Diesel Manual is the most economical at 61.7 mpg."
+
+  utter_model_comparisons:
+    - text: "I20 has a smaller engine (1.2L vs 1.7L/2.0L), is more affordable (£7,999 vs £11,399+), and offers better MPG (58.9 vs 43.5–61.7)."
+  
+  utter_greet:
+    - text: "Hello! I'm your Hyundai assistant. How can I help you today? 🚗"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+
+  utter_thank:
+    - text: "You're welcome! Let me know if I can help you with anything else."
+
+  utter_default:
+    - text: "I'm sorry, I didn't understand that. Could you please rephrase?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
