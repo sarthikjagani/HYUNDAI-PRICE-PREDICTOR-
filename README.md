@@ -113,6 +113,4 @@ This project employs a user-friendly interface and robust backend to provide acc
 2. **File Location**: The video is stored in the "Screen recording" file within the wiki repository for easy access.
 
 
-=======
-# HYUNDAI-PRICE-PREDICTOR-
->>>>>>> 172c2ef92301334061b71913997f031d78744db2
+
